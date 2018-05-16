@@ -1,7 +1,6 @@
 import nltk
 import re
 from nltk.corpus import stopwords
-# nltk.download('stopwords')
 
 # get bag of words with count
 def get_bags(tokenized, bags):
@@ -26,7 +25,6 @@ def matching(bags_dict, user_bags):
 	return matched
 
 def preprocess(table, bags_dict, regexp):
-	# preprocess text file
 	with open("data.txt") as data:
 		for line in data:
 			row = []
@@ -39,7 +37,6 @@ def preprocess(table, bags_dict, regexp):
 		ans = regexp.sub(' ', table[each])
 		tmp = question.lower() + " " + ans.lower()
 		tokenized = nltk.word_tokenize(tmp)
-		#tokenized1 = [x for x in tokenized if not x in stopwd]
 		bags_dict[each] = get_bags(tokenized, bags)
 
 def matching_count(matched_weight, user_bow_keys, bags_dict):
@@ -80,7 +77,6 @@ preprocess(table, bags_dict, regexp)
 user_input  = raw_input("Enter a FAQ related to TOEFL: ")
 user_tokenized = regexp.sub(' ', user_input)
 user_tokenized1 = nltk.word_tokenize(user_tokenized.lower())
-#user_tokenized2 = [x for x in user_tokenized1 if not x in stopwd]
 user_bow = get_bags(user_tokenized1, {})
 
 matched_weight = matching(bags_dict, user_bow)

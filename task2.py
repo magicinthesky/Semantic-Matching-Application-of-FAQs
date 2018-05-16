@@ -31,7 +31,6 @@ def matching(bags_dict, user_bags):
 	return matched
 
 def preprocess(table, bags_dict, regexp, switch_ls):
-	# preprocess text file
 	with open("data.txt") as data:
 		for line in data:
 			row = []
