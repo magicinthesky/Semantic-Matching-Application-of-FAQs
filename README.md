@@ -4,9 +4,9 @@
 - task1.py implemented a shallow NLP pipeline using bags-of-words matching algorithm and term frequency-inverse document frequency (tf-idf) using Python and NLTK
 - task2.py developed a comprehensive NLP pipeline to extract semantically rich features: 
   - Lemmatization
-  - stemming
+  - Stemming
   - Part-of-speech tagging
-  - dependency parsing
+  - Dependency parsing
   - WordNet
 - Produced top-10 matched FAQs in high semantic accuracy
 
