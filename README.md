@@ -1,53 +1,32 @@
-## Frequently Asked Questions (FAQs) semantic matching application
+## FAQ Matching Application Documentation
 
-- A corpus of different 50 FAQs and corresponding answers was extracted from the TOEFL IBT official website. Here the link of reference: ​https://www.ets.org/toefl/ibt/faq​.
-- task1.py implemented a shallow NLP pipeline using bags-of-words matching algorithm and term frequency-inverse document frequency (tf-idf) using Python and NLTK
-- task2.py developed a comprehensive NLP pipeline to extract semantically rich features: 
-  - Lemmatization
-  - Stemming
-  - Part-of-speech tagging
-  - Dependency parsing
-  - WordNet
-- Produced top-10 matched FAQs in high semantic accuracy
+This application matches user questions to a list of frequently asked questions (FAQs) about the TOEFL iBT test. It provides several different matching methods, each using different natural language processing (NLP) techniques to improve semantic similarity.
 
-------  
-## How to run:
-> Open terminal and enter commands:<br />
-> &nbsp;&nbsp;&nbsp;&nbsp;python task1.py<br />
-> &nbsp;&nbsp;&nbsp;&nbsp;python task2.py<br />
+### Inputs
+
+- **User Input:** A question related to the TOEFL iBT test entered by the user through the command line. 
+
+### Outputs
+
+The application provides four sets of top 10 matched FAQs, each using a different method:
+
+1. **Lemmatized Features:** This method uses lemmatization to reduce words to their base form. For example, "running", "ran", and "runs" would all be reduced to "run". 
+
+2. **Stemmed Features:** Similar to lemmatization, stemming also reduces words to their root form. However, stemming is a simpler process and may not always result in a valid word.
+
+3. **Dependency Parsing:**  This method analyzes the grammatical structure of the user's question and each FAQ, comparing their syntactic relationships for similarity. 
+
+4. **WordNet Similarity:** This method utilizes the WordNet lexical database to determine the semantic similarity between the user's question and each FAQ. It considers synonyms, hyponyms, and other relationships between words to calculate a similarity score.
 
 
-------  
-**Sample User Input**:<br />
-What is the test fee refund policy
+Each output includes:
 
-**Sample Output**:
-1. What is the test fee refund policy? 2.58616602591<br />
-If you cancel your registration before the 4-day advance deadline, you will receive a refund of half the original test fee you paid. Refunds are in U.S. dollars. Cash refunds are not available.
+- **Matched FAQ:** The text of the FAQ that most closely matches the user's question.
 
-2. Can I get a refund on my test fee? 1.08289241623<br />
-Yes. If you cancel your registration no later than 4 days before your test date, you can receive a refund of half your original test fee. Refunds are in U.S. dollars. Cash refunds are not available.
+- **Similarity Score:** A numerical representation of the semantic similarity between the user's question and the matched FAQ. 
 
-3. How can I get a refund on my TOEFL iBT registration voucher? 0.814948939949<br />
-If you purchased a registration voucher and wish to get a refund:If you have not yet registered for a test date, contact the organization where you purchased the registration voucher.If you already have a test appointment, follow the regular TOEFL refund procedures found in the TOEFL iBT Registration Bulletin and on the TOEFL website. You can cancel your registration no later than 4 full days before your test date and receive a refund of half the original test fee paid. Refunds are in U.S. dollars. Cash refunds are not available.
+- **Answer:** The answer to the matched FAQ. 
 
-4. How much does the TOEFL iBT test cost? 0.736131152798<br /> 
-The test fee depends on the test location you choose.
+---
 
-5. How often is the test given? 0.550611153552<br />
-The TOEFL iBT test is given on fixed dates, more than 50 times a year.
-
-6. What is the TOEFL test? 0.480064753174<br />
-The TOEFL test measures the ability of non-native English speakers to use and understand the English language as it is heard, spoken, read and written in the university classroom.
-
-7. What are the fees for other services? 0.390812890813<br /> 
-See Fees.
-
-8. What is the difference between the TOEFL iBT test and TOEFL paper-delivered testing? 0.371164782929<br />
-The TOEFL iBT test, delivered via the internet, measures reading, listening, speaking and writing skills. It is offered more than 50 times a year and is administered online at testing sites around the world.The revised TOEFL Paper-delivered Test, which replaces the TOEFL PBT test, measures reading, listening and writing. There is no speaking component because of the technical requirements of capturing spoken responses.
-
-9. When do late fees apply? 0.356863957704<br />
-Registration closes 7 days prior to the test date. A late fee of US$40 is charged for registrations received after this deadline. Late registration closes 4 days prior to your test date.
-
-10. Can I take the entire test in 1 day? 0.338485044367<br />
-Yes, the test is given in 1 day. The test takes about 4 hours, but with check-in you should plan to be at the test center for at least 4 and half hours.
+This application showcases a simple FAQ matching system that leverages basic NLP techniques to improve semantic matching. By comparing different methods, users can gain insights into the strengths and weaknesses of each approach.  
